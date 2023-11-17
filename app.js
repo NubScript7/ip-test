@@ -4,6 +4,8 @@ const reqIP = require('request-ip');
 
 const app = express();
 
+app.set('trust proxy', true)
+
 app.get("/",(req,res)=>{
 
  let clip = reqIP.getClientIp(req);
