@@ -8,7 +8,12 @@ app.get("/",(req,res)=>{
 
  let clip = reqIP.getClientIp(req);
 
- res.send("the ip address is "+clip)
+ res.send([
+  req.socket.remoteAdress,
+  req.ip,
+  req.ips,
+  clip
+ ])
 
 })
 
